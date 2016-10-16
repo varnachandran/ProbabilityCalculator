@@ -3,7 +3,8 @@
 Description:
 
 A Python/Django application that calculates probability for an n-sided die labelled with integers from 1 to n, to roll all the numbers {1, ..., n}, in any order if the die is thrown n times.
-To run:
+
+To run the application, go to the folder that has the file 'manage.py' and run the following command:
 >>python manage.py runserver
 
 To run the application, 
