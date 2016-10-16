@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+
+
+<head>
+    <title>N-Sided die</title>
+<style>
+body
+{
+    background: url("static/die_probability.jpg");
+    background-size: 120%;
+}
+
+.textonpage
+{
+  text-align:center;
+}
+.erroronpage
+{
+  text-align:center;
+    color: #ff0000;
+}
+
+
+</style>
+</head>
+</body>
+
+<form method=post action="">{% csrf_token %}
+<br><h4 align="center">Application that calculates the probability for an n-sided die labelled with integers from 1 to n, to roll all
+        the numbers {1, ..., n}, in any order if the die is thrown n times</h4>
+<table>
+  {% for field in form %}
+    <tr>
+    <div class ="textonpage">
+
+    <br><br><br>
+    Select the number of sides of the die
+    {{ field }}
+    </div>
+
+    <div class ="erroronpage">
+        {{ field.errors }}
+    </div>
+
+
+    </tr>
+  {% endfor %}
+</table>
+
+<div class ="textonpage">
+
+<p><input type=submit value=Compute></p>
+<p>
+    {% if result %} The probability is {{result}} {% else %} &nbsp; {% endif %}
+
+</p>
+</div>
+</form>
+
+
+</html>
